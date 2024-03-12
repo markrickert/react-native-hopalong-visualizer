@@ -1,0 +1,30 @@
+diff --git a/node_modules/expo-dev-menu/android/src/main/java/expo/modules/devmenu/modules/DevMenuModule.kt b/node_modules/expo-dev-menu/android/src/main/java/expo/modules/devmenu/modules/DevMenuModule.kt
+index 01dc3ee..50b26ab 100644
+--- a/node_modules/expo-dev-menu/android/src/main/java/expo/modules/devmenu/modules/DevMenuModule.kt
++++ b/node_modules/expo-dev-menu/android/src/main/java/expo/modules/devmenu/modules/DevMenuModule.kt
+@@ -26,6 +26,10 @@ class DevMenuModule : Module() {
+     }
+ 
+     AsyncFunction("addDevMenuCallbacks") { callbacks: ReadableArray ->
++      // Patch Added to fix issues with duplicating custom items in expo-dev-menu
++      // https://github.com/expo/expo/pull/27356
++      DevMenuManager.registeredCallbacks.clear()
++
+       val size = callbacks.size()
+       for (i in 0 until size) {
+         val callback = callbacks.getMap(i)
+diff --git a/node_modules/expo-dev-menu/ios/Modules/DevMenuModule.swift b/node_modules/expo-dev-menu/ios/Modules/DevMenuModule.swift
+index e6ba663..ceae55b 100644
+--- a/node_modules/expo-dev-menu/ios/Modules/DevMenuModule.swift
++++ b/node_modules/expo-dev-menu/ios/Modules/DevMenuModule.swift
+@@ -19,6 +19,10 @@ open class DevMenuModule: Module {
+     }
+ 
+     AsyncFunction("addDevMenuCallbacks") { (callbacks: [[String: Any]]) in
++      // Patch Added to fix issues with duplicating custom items in expo-dev-menu
++      // https://github.com/expo/expo/pull/27356
++      DevMenuManager.shared.registeredCallbacks.removeAll()
++
+       callbacks.forEach { callback in
+         guard let name = callback["name"] as? String else {
+           return
