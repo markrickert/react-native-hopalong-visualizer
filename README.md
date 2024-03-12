@@ -14,8 +14,12 @@ This project was initialized with the [Ignite react-native boilerplate](https://
 
 ---
 
-Credits:
+## Credits:
 
 * Original WebGL Chrome Experiment by [Iacopo Sassarini](https://experiments.withgoogle.com/webgl-attractors-trip)
 * Updates [Sam Leatherdale](https://github.com/SamLeatherdale/hopalong-redux)
 * This React-Native implementation by Mark Rickert
+
+## Example:
+
+![E74B5B6F-EB7B-4821-9F11-9C45A71421B9-15452-0001EA78E76ED6E1](https://github.com/markrickert/react-native-hopalong-visualizer/assets/139261/c662c42e-156f-4b1f-a440-55ea8b25d78a)
