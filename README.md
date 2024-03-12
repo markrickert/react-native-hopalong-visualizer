@@ -16,6 +16,16 @@ You can touch and drag the screen to change the fractal's angle.
 
 ---
 
+## Getting Started:
+
+```ts
+yarn
+yarn prebuild:clean
+yarn ios // or yarn android
+```
+
+> This will NOT work on the iOS emulator [for reasons](https://github.com/expo/expo-three?tab=readme-ov-file#usage). You'll need to run it on a physical device or on the android emulator.
+
 ## Credits:
 
 * Original WebGL Chrome Experiment by [Iacopo Sassarini](https://experiments.withgoogle.com/webgl-attractors-trip)
