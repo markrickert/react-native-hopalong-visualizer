@@ -14,6 +14,8 @@ This project was initialized with the [Ignite react-native boilerplate](https://
 
 You can touch and drag the screen to change the fractal's angle.
 
+The majority of this project is boilerplate code. You can see the WebGL code that renders the fractal in [`/src/app/index.tsx`](https://github.com/markrickert/react-native-hopalong-visualizer/blob/main/src/app/index.tsx).
+
 ---
 
 ## Getting Started:
@@ -35,3 +37,8 @@ yarn ios // or yarn android
 ## Example:
 
 ![E74B5B6F-EB7B-4821-9F11-9C45A71421B9-15452-0001EA78E76ED6E1](https://github.com/markrickert/react-native-hopalong-visualizer/assets/139261/c662c42e-156f-4b1f-a440-55ea8b25d78a)
+
+## TODO:
+
+ - [ ] Add more touch controls (pinch to change speed, rotate two fingers to control angle, etc.)
+ - [ ] Fix white loading screen
