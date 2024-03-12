@@ -305,6 +305,16 @@ export default observer(function WelcomeScreen() {
   }, [])
 
   const onCreateContext = async (gl: ExpoWebGLRenderingContext) => {
+    // removes the warning EXGL: gl.pixelStorei() doesn't support this parameter yet!
+    const pixelStorei = gl.pixelStorei.bind(gl)
+    gl.pixelStorei = function (...args) {
+      const [parameter] = args
+      switch (parameter) {
+        case gl.UNPACK_FLIP_Y_WEBGL:
+          return pixelStorei(...args)
+      }
+    }
+
     const { drawingBufferWidth: width, drawingBufferHeight: height } = gl
     const sceneColor = 0x000000
 
